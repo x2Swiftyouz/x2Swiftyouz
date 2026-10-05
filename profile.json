@@ -1,0 +1,22 @@
+{
+  "username": "x2Swiftyouz",
+  "display": "x2swiftz_z",
+  "portrait": "assets/portrait.png",
+  "portrait_cols": 40,
+  "info": [
+    ["OS", "Windows 11"],
+    ["Host", "Sakon Nakhon, Thailand"],
+    ["Uptime", "{uptime}"],
+    ["IDE", "VS Code"],
+    [],
+    ["Languages.Programming", "Python, PowerShell"],
+    ["Languages.Real", "Thai, English"],
+    [],
+    ["Projects", "Discord bots, Akati-Os"],
+    ["Hobbies", "Coding, Anime, Music"]
+  ],
+  "contact": [
+    ["Discord", "your_discord_name"],
+    ["GitHub", "x2Swiftyouz"]
+  ]
+}
