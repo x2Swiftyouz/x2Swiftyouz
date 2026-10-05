@@ -42,12 +42,23 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py: the most recently updated repos -->
 <!--START_SECTION:projects-->
+<p align="center">
+<a href="https://github.com/x2Swiftyouz/Akati-Os"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Akati-Os_dark.svg"><img alt="Akati-Os" src="cards/Akati-Os_light.svg" width="49%"></picture></a>
+<a href="https://github.com/x2Swiftyouz/Bot-Ai-Discord"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Ai-Discord_dark.svg"><img alt="Bot-Ai-Discord" src="cards/Bot-Ai-Discord_light.svg" width="49%"></picture></a>
+<a href="https://github.com/x2Swiftyouz/Bot-Music"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Music_dark.svg"><img alt="Bot-Music" src="cards/Bot-Music_light.svg" width="49%"></picture></a>
+</p>
 <!--END_SECTION:projects-->
 
 ### 📡 Recent activity
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
+- ⬆️ Pushed code to [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>just now</sub>
+- 🔀 Opened PR [#3](https://github.com/x2Swiftyouz/x2Swiftyouz/pull/3) in [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>5m ago</sub>
+- ⬆️ Pushed code to [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>5m ago</sub>
+- 🔀 Opened PR [#2](https://github.com/x2Swiftyouz/x2Swiftyouz/pull/2) in [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>13m ago</sub>
+- 🌿 Created branch `claude/epic-thompson-ky3zo4` in [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>15m ago</sub>
+- 🔀 Opened PR [#1](https://github.com/x2Swiftyouz/x2Swiftyouz/pull/1) in [x2Swiftyouz/x2Swiftyouz](https://github.com/x2Swiftyouz/x2Swiftyouz) · <sub>18m ago</sub>
 <!--END_SECTION:activity-->
 
 <details>
