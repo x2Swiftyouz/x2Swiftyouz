@@ -6,10 +6,15 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["profile.json", "assets/**", "scripts/**"]
+    paths: ["profile.json", "assets/**", "scripts/**", ".github/workflows/update.yml"]
 
 permissions:
   contents: write
+
+# update.yml and waka.yml both push to main; never run them at the same time
+concurrency:
+  group: readme-main
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -27,6 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dark_mode.svg light_mode.svg
+          git add dark_mode.svg light_mode.svg README.md cards
           git diff --cached --quiet || git commit -m "chore: update profile card"
+          git pull --rebase
           git push
