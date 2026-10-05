@@ -3,6 +3,9 @@
   "display": "x2swiftz_z",
   "portrait": "portrait.jpg",
   "portrait_cols": 40,
+  "utc_offset": 7,
+  "greeting_from": "Thailand",
+  "projects_max": 6,
   "info": [
     ["OS", "Windows 11"],
     ["Host", "Sakon Nakhon, Thailand"],
@@ -19,5 +22,15 @@
   "contact": [
     ["Discord", "@onibelindka9"],
     ["GitHub", "x2Swiftyouz"]
+  ],
+  "quotes": [
+    {"text": "Talk is cheap. Show me the code.", "by": "Linus Torvalds"},
+    {"text": "First, solve the problem. Then, write the code.", "by": "John Johnson"},
+    {"text": "Make it work, make it right, make it fast.", "by": "Kent Beck"},
+    {"text": "Code is like humor. When you have to explain it, it's bad.", "by": "Cory House"},
+    {"text": "Simplicity is the soul of efficiency.", "by": "Austin Freeman"},
+    {"text": "If you don't take risks, you can't create a future.", "by": "Monkey D. Luffy"},
+    {"text": "Hard work is worthless for those that don't believe in themselves.", "by": "Naruto Uzumaki"},
+    {"text": "A lesson without pain is meaningless.", "by": "Edward Elric"}
   ]
 }

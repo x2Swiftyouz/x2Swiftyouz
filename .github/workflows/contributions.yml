@@ -1,4 +1,4 @@
-name: Generate snake animation
+name: Generate contribution games
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/snake.yml"]
+    paths: [".github/workflows/contributions.yml"]
 
 permissions:
   contents: write
@@ -14,13 +14,23 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: Platane/snk/svg-only@v3
+      # Both games go into dist/ and are published together, because the
+      # publish step replaces the whole output branch.
+      - name: Pac-Man
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          games: pacman
+      - name: Snake
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
+      - run: ls -la dist
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:

@@ -2,11 +2,15 @@ name: Update WakaTime stats
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # daily
+    - cron: "30 0 * * *"   # daily, offset from update.yml
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: readme-main
+  cancel-in-progress: false
 
 jobs:
   update:
