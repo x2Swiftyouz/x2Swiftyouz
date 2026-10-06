@@ -1,12 +1,14 @@
 """Handle profile issues: guestbook entries and tic-tac-toe moves.
 
 Runs from .github/workflows/issues.yml when an issue is opened. Reads the event from
-GITHUB_EVENT_PATH, updates guestbook.json / xo.json, re-renders their README sections,
-then answers and closes the issue.
+GITHUB_EVENT_PATH, updates guestbook.json / xo.json and re-renders their README sections.
+The reply is only queued; the workflow posts it (and closes the issue) after the
+change has been pushed, so a failed push never leaves a misleading answer.
 
 Usage:
-    python scripts/issue_bot.py            # handle the issue in GITHUB_EVENT_PATH
-    python scripts/issue_bot.py --render   # just re-render both README sections
+    python scripts/issue_bot.py                 # handle the issue in GITHUB_EVENT_PATH
+    python scripts/issue_bot.py --send-reply    # post the queued reply, close the issue
+    python scripts/issue_bot.py --render        # just re-render both README sections
 """
 import datetime as dt
 import html
@@ -26,6 +28,7 @@ REPO = f"{CFG['username']}/{CFG['username']}"
 NEW_ISSUE = f"https://github.com/{REPO}/issues/new"
 GUESTBOOK = ROOT / "guestbook.json"
 XO = ROOT / "xo.json"
+REPLY = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "issue-bot-reply.json"
 MAX_MESSAGE = 200
 SHOW_ENTRIES = 10
 LINES = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
@@ -53,16 +56,24 @@ def api(method, path, **kw):
 
 
 def reply_and_close(number, text, completed=True):
+    save(REPLY, {"number": number, "text": text, "completed": completed})
+
+
+def send_reply():
+    if not REPLY.exists():
+        return
+    r = json.loads(REPLY.read_text(encoding="utf-8"))
     footer = "\n\n<sub>🤖 This reply was posted automatically by the profile bot.</sub>"
-    api("POST", f"/issues/{number}/comments", json={"body": text + footer})
-    api("PATCH", f"/issues/{number}", json={
-        "state": "closed", "state_reason": "completed" if completed else "not_planned"})
+    api("POST", f"/issues/{r['number']}/comments", json={"body": r["text"] + footer})
+    api("PATCH", f"/issues/{r['number']}", json={
+        "state": "closed", "state_reason": "completed" if r["completed"] else "not_planned"})
 
 
 # ---------------------------------------------------------------- guestbook
 def clean_message(body):
     """Visitor text is untrusted: one line, no HTML, no Markdown, no live links."""
-    m = re.search(r"###\s*Message\s*\n(.*)", body or "", re.S)   # issue-form layout
+    # issue-form layout: text under "### Message", up to the next heading or rule
+    m = re.search(r"###\s*Message\s*\n(.*?)(?:\n###\s|\n-{3,}\s*(?:\n|$)|$)", body or "", re.S)
     text = (m.group(1) if m else body or "").replace("_No response_", "")
     text = " ".join(text.split())[:MAX_MESSAGE]
     text = html.escape(text, quote=False)
@@ -198,6 +209,9 @@ def render_readme():
 
 
 def main():
+    if "--send-reply" in sys.argv:
+        send_reply()
+        return
     if "--render" not in sys.argv:
         event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
         issue = event["issue"]
