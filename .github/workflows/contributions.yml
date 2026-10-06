@@ -1,4 +1,4 @@
-name: Generate contribution games
+name: Generate snake animation
 
 on:
   schedule:
@@ -16,13 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      # Both games go into dist/ and are published together, because the
-      # publish step replaces the whole output branch.
-      - name: Pac-Man
-        uses: abozanona/pacman-contribution-graph@main
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          games: pacman
       - name: Snake
         uses: Platane/snk/svg-only@v3
         with:

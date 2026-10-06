@@ -96,38 +96,4 @@ Developer().say_hi()
   <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/x2Swiftyouz/x2Swiftyouz/output/github-snake.svg">
 </picture>
 
-<details>
-<summary><b>🕹️ Pac-Man version</b></summary>
-<br>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/x2Swiftyouz/x2Swiftyouz/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/x2Swiftyouz/x2Swiftyouz/output/pacman-contribution-graph.svg">
-  <img alt="Pac-Man eating my contribution graph" src="https://raw.githubusercontent.com/x2Swiftyouz/x2Swiftyouz/output/pacman-contribution-graph.svg">
-</picture>
-</details>
-
-### 🎮 Play tic-tac-toe
-
-<!-- Filled by scripts/issue_bot.py; each move is an issue -->
-<!--START_SECTION:xo-->
-You are ❌ — click a number to play your move. The bot answers as ⭕.
-
-<table>
-<tr><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%201&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">1️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%202&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">2️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%203&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">3️⃣</a></td></tr>
-<tr><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%204&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">4️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%205&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">5️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%206&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">6️⃣</a></td></tr>
-<tr><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%207&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">7️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%208&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">8️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%209&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">9️⃣</a></td></tr>
-</table>
-
-🏆 Visitors **0** · 🤖 Bot **0** · 🤝 Draws **0**
-<!--END_SECTION:xo-->
-
-### 📖 Guestbook
-
-<!-- Filled by scripts/issue_bot.py from guestbook issues -->
-<!--START_SECTION:guestbook-->
-[**✍️ Sign the guestbook**](https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?template=guestbook.yml) — leave a message and it shows up here.
-
-_Be the first to sign!_
-<!--END_SECTION:guestbook-->
-
 <img width="100%" alt="" src="https://capsule-render.vercel.app/api?type=waving&color=0:d2a8ff,50:79c0ff,100:7ee787&height=100&section=footer" />
