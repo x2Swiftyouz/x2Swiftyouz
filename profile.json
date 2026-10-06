@@ -6,6 +6,8 @@
   "utc_offset": 7,
   "greeting_from": "Thailand",
   "projects_max": 6,
+  "anilist_user": "",
+  "discord_id": "",
   "info": [
     ["OS", "Windows 11"],
     ["Host", "Sakon Nakhon, Thailand"],
@@ -22,6 +24,13 @@
   "contact": [
     ["Discord", "@onibelindka9"],
     ["GitHub", "x2Swiftyouz"]
+  ],
+  "festivals": [
+    {"from": "12-31", "to": "01-02", "emoji": "🎆", "text": "Happy New Year! สวัสดีปีใหม่"},
+    {"from": "04-13", "to": "04-15", "emoji": "💦", "text": "Happy Songkran! สุขสันต์วันสงกรานต์"},
+    {"from": "10-31", "to": "10-31", "emoji": "🎃", "text": "Happy Halloween!"},
+    {"from": "2026-11-24", "to": "2026-11-24", "emoji": "🪷", "text": "Happy Loy Krathong! สุขสันต์วันลอยกระทง"},
+    {"from": "12-24", "to": "12-25", "emoji": "🎄", "text": "Merry Christmas!"}
   ],
   "quotes": [
     {"text": "Talk is cheap. Show me the code.", "by": "Linus Torvalds"},
