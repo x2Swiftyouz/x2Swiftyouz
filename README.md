@@ -65,6 +65,13 @@ Developer().say_hi()
 <summary><b>⏱️ Coding time this week</b></summary>
 
 <!--START_SECTION:waka-->
+
+```txt
+From: 28 September 2026 - To: 05 October 2026
+
+No activity tracked
+```
+
 <!--END_SECTION:waka-->
 
 </details>
