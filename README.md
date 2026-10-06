@@ -103,13 +103,13 @@ Developer().say_hi()
 You are ❌ — click a number to play your move. The bot answers as ⭕.
 
 <table>
-<tr><td align="center" width="48">⭕</td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%202&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">2️⃣</a></td><td align="center" width="48">❌</td></tr>
+<tr><td align="center" width="48">⭕</td><td align="center" width="48">⭕</td><td align="center" width="48">❌</td></tr>
 <tr><td align="center" width="48">❌</td><td align="center" width="48">❌</td><td align="center" width="48">⭕</td></tr>
-<tr><td align="center" width="48">⭕</td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%208&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">8️⃣</a></td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%209&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">9️⃣</a></td></tr>
+<tr><td align="center" width="48">⭕</td><td align="center" width="48">❌</td><td align="center" width="48"><a href="https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?title=xo%3A%209&body=Just%20press%20%2A%2ACreate%2A%2A%20%E2%80%94%20the%20bot%20plays%20back%20within%20a%20minute.%20%F0%9F%8E%AE">9️⃣</a></td></tr>
 </table>
 
 🏆 Visitors **0** · 🤖 Bot **0** · 🤝 Draws **0**
-<br><sub>Recent moves: x2Swiftyouz → 4 · x2Swiftyouz → 3 · x2Swiftyouz → 5</sub>
+<br><sub>Recent moves: x2Swiftyouz → 8 · x2Swiftyouz → 4 · x2Swiftyouz → 3 · x2Swiftyouz → 5</sub>
 <!--END_SECTION:xo-->
 
 ### 📖 Guestbook

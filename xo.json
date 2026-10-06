@@ -1,11 +1,12 @@
 {
-  "board": "O XXXOO  ",
+  "board": "OOXXXOOX ",
   "stats": {
     "you": 0,
     "bot": 0,
     "draw": 0
   },
   "log": [
+    "x2Swiftyouz → 8",
     "x2Swiftyouz → 4",
     "x2Swiftyouz → 3",
     "x2Swiftyouz → 5"
