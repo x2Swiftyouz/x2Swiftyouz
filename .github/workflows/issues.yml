@@ -1,35 +1,38 @@
-name: Update profile card
+name: Profile issue bot
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"   # every 6 hours
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ["profile.json", "assets/**", "scripts/**", ".github/workflows/update.yml"]
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
+  issues: write
+
+# one move at a time so guestbook.json / xo.json never race
+concurrency:
+  group: issue-bot
+  cancel-in-progress: false
 
 jobs:
-  build:
+  handle:
+    # startsWith is case-insensitive
+    if: startsWith(github.event.issue.title, 'guestbook') || startsWith(github.event.issue.title, 'xo')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pillow requests
-      - run: python scripts/generate.py
+      - run: pip install requests
+      - run: python scripts/issue_bot.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dark_mode.svg light_mode.svg README.md cards
-          git add anime_dark.svg anime_light.svg 2>/dev/null || true
+          git add README.md guestbook.json xo.json
           git diff --cached --quiet && exit 0
-          git commit -m "chore: update profile card"
+          git commit -m "chore: update guestbook / xo"
           for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
           exit 1

@@ -3,12 +3,15 @@
 Outputs:
     dark_mode.svg / light_mode.svg        main terminal card
     cards/<repo>_{dark,light}.svg         one card per recent project
-    README.md                             fills the projects + activity sections
+    anime_{dark,light}.svg                AniList "currently watching" (if anilist_user set)
+    README.md                             fills the projects, commits, activity,
+                                          anime and discord sections
 
 Usage:
     GITHUB_TOKEN=xxx python scripts/generate.py          # live data
     python scripts/generate.py --mock                    # fake data, for local preview
 """
+import base64
 import datetime as dt
 import html
 import io
@@ -58,6 +61,8 @@ query($login: String!) {
         primaryLanguage { name color }
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
           edges { size node { name color } } }
+        defaultBranchRef { target { ... on Commit {
+          history(first: 5) { nodes { oid messageHeadline committedDate url } } } } }
       }
     }
     contributionsCollection {
@@ -112,12 +117,20 @@ def fetch_mock():
         {"name": "Bot-Ai-Discord", "description": "AI chat bot for Discord", "isFork": False,
          "url": "https://github.com/x2Swiftyouz/Bot-Ai-Discord", "stargazerCount": 2,
          "forkCount": 1, "pushedAt": ago(hours=5), "primaryLanguage": py,
+         "defaultBranchRef": {"target": {"history": {"nodes": [
+             {"oid": "a1b2c3d4e5", "messageHeadline": "Add /ask command with <streaming> replies",
+              "committedDate": ago(hours=5), "url": "https://github.com"},
+             {"oid": "f6e5d4c3b2", "messageHeadline": "Merge pull request #3 from x/y",
+              "committedDate": ago(hours=4), "url": "https://github.com"}]}}},
          "languages": {"edges": [{"size": 48000, "node": py},
                                  {"size": 90, "node": {"name": "Dockerfile", "color": "#384d54"}}]}},
         {"name": "Bot-Music", "description": "Music bot for Discord with queue, loop and "
          "playlist support, built on discord.py", "isFork": False,
          "url": "https://github.com/x2Swiftyouz/Bot-Music", "stargazerCount": 1,
          "forkCount": 0, "pushedAt": ago(days=3), "primaryLanguage": py,
+         "defaultBranchRef": {"target": {"history": {"nodes": [
+             {"oid": "0f1e2d3c4b", "messageHeadline": "Fix queue skipping the last song",
+              "committedDate": ago(days=3), "url": "https://github.com"}]}}},
          "languages": {"edges": [{"size": 30000, "node": py}]}},
         {"name": "Akati-Os", "description": None, "isFork": False,
          "url": "https://github.com/x2Swiftyouz/Akati-Os", "stargazerCount": 0,
@@ -186,7 +199,30 @@ def uptime(created):
 
 
 def local_now():
-    return dt.datetime.now(dt.timezone(dt.timedelta(hours=CFG.get("utc_offset", 0))))
+    tz = dt.timezone(dt.timedelta(hours=CFG.get("utc_offset", 0)))
+    if os.environ.get("PROFILE_NOW"):          # preview a date, e.g. PROFILE_NOW=2026-04-13T10:00
+        return dt.datetime.fromisoformat(os.environ["PROFILE_NOW"]).replace(tzinfo=tz)
+    return dt.datetime.now(tz)
+
+
+def festival(user):
+    """Today's festival from profile.json (MM-DD yearly or YYYY-MM-DD one-off), or the
+    GitHub account anniversary. Returns {"emoji", "text"} or None."""
+    today = local_now().date()
+    for f in CFG.get("festivals") or []:
+        lo, hi = f["from"], f["to"]
+        if len(lo) == 10:
+            if dt.date.fromisoformat(lo) <= today <= dt.date.fromisoformat(hi):
+                return f
+            continue
+        md = today.strftime("%m-%d")
+        if (lo <= md <= hi) if lo <= hi else (md >= lo or md <= hi):   # range may wrap new year
+            return f
+    created = dt.datetime.fromisoformat(user["createdAt"].replace("Z", "+00:00")).date()
+    years = today.year - created.year
+    if years >= 1 and (today.month, today.day) == (created.month, created.day):
+        return {"emoji": "🎂", "text": f"{years} year{'s' * (years != 1)} on GitHub today!"}
+    return None
 
 
 def greeting():
@@ -309,7 +345,9 @@ def build_lines(user):
     up = uptime(user["createdAt"])
 
     head = f"{CFG['display']}@github"
-    lines = [("title", head), ("dim", "-" * INFO_COLS), ("greet", greeting()), ("blank", "")]
+    fest = festival(user)
+    greet = f"{fest['emoji']} {fest['text']}" if fest else greeting()
+    lines = [("title", head), ("dim", "-" * INFO_COLS), ("greet", greet), ("blank", "")]
 
     def kv(k, v):
         lines.append(("kv",) + dotted(k, v.replace("{uptime}", up)))
@@ -378,11 +416,13 @@ text{{white-space:pre}}
 .cmd{{clip-path:inset(0 100% 0 0);animation:type .7s steps(8) .3s forwards}}
 .bar{{transform:scaleX(0);transform-box:fill-box;animation:grow .6s ease-out forwards}}
 .cur{{fill:{t['title']};animation:blink 1s steps(1) infinite}}
+.fx{{opacity:.35;animation:fall linear infinite}}
+@keyframes fall{{from{{transform:translateY(-40px)}}to{{transform:translateY({height + 40}px)}}}}
 @keyframes on{{to{{opacity:1}}}}
 @keyframes type{{to{{clip-path:inset(0 0 0 0)}}}}
 @keyframes grow{{to{{transform:scaleX(1)}}}}
 @keyframes blink{{50%{{opacity:0}}}}
-@media (prefers-reduced-motion:reduce){{.p,.ty,.c,.cmd,.bar{{animation:none;opacity:1;clip-path:none;transform:none}}.cur{{animation:none}}}}
+@media (prefers-reduced-motion:reduce){{.p,.ty,.c,.cmd,.bar{{animation:none;opacity:1;clip-path:none;transform:none}}.cur{{animation:none}}.fx{{display:none}}}}
 </style>""")
     g0, g1, g2 = t["grad"]
     port_h = len(rows) * LH
@@ -403,6 +443,15 @@ text{{white-space:pre}}
         a(f'<circle cx="{20 + i*20}" cy="{TB/2}" r="6" fill="{c}"/>')
     a(f'<text class="d" x="{width/2}" y="{TB/2 + 4}" font-size="12" text-anchor="middle">'
       f'{esc(CFG["display"])}@github: ~</text>')
+
+    # festival: emoji drifting down behind the content
+    fest = festival(user)
+    if fest:
+        for i in range(14):
+            x = PAD + (i * 389) % (width - 2 * PAD)
+            dur = 7 + (i * 3) % 5
+            a(f'<text class="fx" x="{x}" y="0" font-size="20" '
+              f'style="animation-duration:{dur}s;animation-delay:-{i * 0.9:.1f}s">{fest["emoji"]}</text>')
 
     # prompt: "$ neofetch" typed before anything else shows up
     a(f'<text x="{PAD}" y="{prompt_y}"><tspan class="h">{esc(CFG["display"])}@github</tspan>'
@@ -590,65 +639,56 @@ def write_project_cards(user):
 
 
 # ---------------------------------------------------------------- activity feed
-def push_text(n, branch, link):
-    what = f"{n} commit{'s' * (n != 1)} " if n else ""
-    where = f"`{branch}` in " if branch else ""
-    return f"Pushed {what}to {where}{link}"
-
-
 def describe(ev):
     repo = ev["repo"]["name"]
     link = f"[{repo}](https://github.com/{repo})"
     p = ev.get("payload") or {}
     kind = ev["type"]
     if kind == "PushEvent":
-        n = p.get("size") or len(p.get("commits") or [])
-        branch = (p.get("ref") or "").removeprefix("refs/heads/")
-        return "⬆️", push_text(n, branch, link), ("push", repo, branch), n
+        return None                        # covered by the latest-commits section
     if kind == "CreateEvent":
         ref = p.get("ref_type")
         if ref == "repository":
-            return "🎉", f"Created repository {link}", None, 0
-        if ref in ("branch", "tag"):
-            icon = "🌿" if ref == "branch" else "🏷️"
-            return icon, f"Created {ref} `{p.get('ref')}` in {link}", None, 0
+            return "🎉", f"Created repository {link}"
+        if ref == "tag":                   # branches are mostly short-lived work branches
+            return "🏷️", f"Created tag `{p.get('ref')}` in {link}"
     if kind == "PullRequestEvent":
         pr = p.get("pull_request") or {}
         num = p.get("number") or pr.get("number")
         pr_link = f"[#{num}](https://github.com/{repo}/pull/{num})"
         action = p.get("action")
         if action == "opened":
-            return "🔀", f"Opened PR {pr_link} in {link}", None, 0
+            return "🔀", f"Opened PR {pr_link} in {link}"
         if action == "closed":
             if pr.get("merged"):
-                return "✅", f"Merged PR {pr_link} in {link}", None, 0
-            return "❌", f"Closed PR {pr_link} in {link}", None, 0
+                return "✅", f"Merged PR {pr_link} in {link}"
+            return "❌", f"Closed PR {pr_link} in {link}"
     if kind == "IssuesEvent":
         num = (p.get("issue") or {}).get("number")
         issue = f"[#{num}](https://github.com/{repo}/issues/{num})"
         if p.get("action") == "opened":
-            return "🐛", f"Opened issue {issue} in {link}", None, 0
+            return "🐛", f"Opened issue {issue} in {link}"
         if p.get("action") == "closed":
-            return "✔️", f"Closed issue {issue} in {link}", None, 0
+            return "✔️", f"Closed issue {issue} in {link}"
     if kind == "IssueCommentEvent":
         num = (p.get("issue") or {}).get("number")
-        return "💬", f"Commented on [#{num}](https://github.com/{repo}/issues/{num}) in {link}", None, 0
+        return "💬", f"Commented on [#{num}](https://github.com/{repo}/issues/{num}) in {link}"
     if kind == "WatchEvent":
-        return "⭐", f"Starred {link}", None, 0
+        return "⭐", f"Starred {link}"
     if kind == "ForkEvent":
-        return "🍴", f"Forked {link}", None, 0
+        return "🍴", f"Forked {link}"
     if kind == "ReleaseEvent":
         tag = (p.get("release") or {}).get("tag_name", "")
-        return "🚀", f"Released `{tag}` in {link}", None, 0
+        return "🚀", f"Released `{tag}` in {link}"
     if kind == "PublicEvent":
-        return "📢", f"Made {link} public", None, 0
+        return "📢", f"Made {link} public"
     return None
 
 
 def activity_markdown(user, limit=6):
     items = []
     profile_repo = f"{CFG['username']}/{CFG['username']}".lower()
-    # the events API is not strictly newest-first, so sort before grouping
+    # the events API is not strictly newest-first
     events = sorted(user.get("events") or [], key=lambda e: e["created_at"], reverse=True)
     for ev in events:
         if ev["repo"]["name"].lower() == profile_repo:
@@ -656,17 +696,11 @@ def activity_markdown(user, limit=6):
         d = describe(ev)
         if not d:
             continue
-        icon, text, group, count = d
-        prev = items[-1] if items else None
-        if group and prev and prev["group"] == group:
-            # merge consecutive pushes to the same repo into one line
-            prev["count"] += count
-            link = f"[{group[1]}](https://github.com/{group[1]})"
-            prev["text"] = push_text(prev["count"], group[2], link)
-            continue
-        items.append({"icon": icon, "text": text, "group": group, "count": count,
-                      "when": rel_time(ev["created_at"])})
-        if len(items) > limit:
+        icon, text = d
+        if items and items[-1]["text"] == text:
+            continue                       # e.g. several comments on the same issue
+        items.append({"icon": icon, "text": text, "when": rel_time(ev["created_at"])})
+        if len(items) >= limit:
             break
     items = items[:limit]
     if not items:
@@ -679,9 +713,150 @@ def fill_section(text, name, body):
     return pattern.sub(lambda m: f"{m.group(1)}\n{body}\n{m.group(2)}", text)
 
 
+# ---------------------------------------------------------------- latest commits
+def md_text(s, limit):
+    """Commit messages and titles go into Markdown: keep them to one safe line."""
+    s = " ".join(s.split())
+    if len(s) > limit:
+        s = s[:limit - 1].rstrip() + "…"
+    s = html.escape(s, quote=False)
+    return re.sub(r"([\\`*_\[\]|~])", r"\\\1", s)
+
+
+def commits_markdown(user, limit=6):
+    found = []
+    for repo in own_repos(user):
+        target = (repo.get("defaultBranchRef") or {}).get("target") or {}
+        for c in (target.get("history") or {}).get("nodes") or []:
+            if c["messageHeadline"].startswith("Merge "):
+                continue
+            found.append((c["committedDate"], repo["name"], c))
+    found.sort(key=lambda f: f[0], reverse=True)
+    if not found:
+        return "_No commits yet._"
+    return "\n".join(
+        f"- 📝 [`{c['oid'][:7]}`]({c['url']}) **{name}** — {md_text(c['messageHeadline'], 72)}"
+        f" · <sub>{rel_time(date)}</sub>"
+        for date, name, c in found[:limit])
+
+
+# ---------------------------------------------------------------- anilist
+ANILIST_QUERY = """
+query($u: String) {
+  MediaListCollection(userName: $u, type: ANIME, status_in: [CURRENT, REPEATING],
+                      sort: UPDATED_TIME_DESC) {
+    lists { entries { progress updatedAt
+      media { episodes siteUrl title { romaji english } coverImage { medium } } } }
+  }
+}"""
+
+
+def cover_data_uri(img):
+    img = img.convert("RGB")
+    img.thumbnail((92, 132))
+    buf = io.BytesIO()
+    img.save(buf, "JPEG", quality=82)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def fetch_anime(name, limit=4):
+    r = requests.post("https://graphql.anilist.co", json={"query": ANILIST_QUERY,
+                      "variables": {"u": name}}, timeout=30)
+    r.raise_for_status()
+    lists = r.json()["data"]["MediaListCollection"]["lists"]
+    entries = sorted((e for lst in lists for e in lst["entries"]),
+                     key=lambda e: -e["updatedAt"])[:limit]
+    for e in entries:
+        # GitHub's image proxy blocks external images inside SVGs, so embed covers
+        url = e["media"]["coverImage"]["medium"]
+        e["cover"] = cover_data_uri(Image.open(io.BytesIO(requests.get(url, timeout=30).content)))
+    return entries
+
+
+def mock_anime():
+    shows = [("Frieren: Beyond Journey's End", 18, 28, "#4f8a8b"),
+             ("Jujutsu Kaisen", 7, 23, "#6b3fa0"),
+             ("One Piece", 1100, None, "#c0392b")]
+    return [{"progress": p, "media": {"episodes": n, "siteUrl": "https://anilist.co",
+             "title": {"english": t, "romaji": t}},
+             "cover": cover_data_uri(Image.new("RGB", (92, 132), c))} for t, p, n, c in shows]
+
+
+def render_anime(entries, theme_name):
+    t = THEMES[theme_name]
+    W, row, fs = 520, 82, 13
+    H = 48 + row * len(entries) + 8
+    s = []
+    a = s.append
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+      f'width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{MONO}" font-size="{fs}">')
+    a(f"""<style>
+.in{{opacity:0;animation:in .5s ease-out forwards}}
+.bar{{transform:scaleX(0);transform-box:fill-box;animation:grow .8s ease-out forwards}}
+@keyframes in{{from{{opacity:0;transform:translateX(-6px)}}to{{opacity:1;transform:none}}}}
+@keyframes grow{{to{{transform:scaleX(1)}}}}
+@media (prefers-reduced-motion:reduce){{.in,.bar{{animation:none;opacity:1;transform:none}}}}
+</style>""")
+    a(f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="8" fill="{t["bg"]}" stroke="{t["border"]}"/>')
+    a(f'<text x="18" y="30" font-size="15" font-weight="700" fill="{t["title"]}">📺 Currently watching</text>')
+    for i, e in enumerate(entries):
+        y = 48 + i * row
+        m = e["media"]
+        title = m["title"]["english"] or m["title"]["romaji"]
+        title = title if len(title) <= 40 else title[:39] + "…"
+        total = m["episodes"]
+        st = f'style="animation-delay:{0.15 * i:.2f}s"'
+        a(f'<g class="in" {st}>')
+        a(f'<clipPath id="c{i}"><rect x="18" y="{y}" width="50" height="72" rx="4"/></clipPath>')
+        a(f'<image x="18" y="{y}" width="50" height="72" preserveAspectRatio="xMidYMid slice" '
+          f'clip-path="url(#c{i})" href="{e["cover"]}" xlink:href="{e["cover"]}"/>')
+        a(f'<text x="82" y="{y + 20}" fill="{t["fg"]}" font-weight="700">{esc(title)}</text>')
+        ep = f'Episode {e["progress"]}' + (f' / {total}' if total else '')
+        a(f'<text x="82" y="{y + 40}" fill="{t["dim"]}">{ep}</text>')
+        bw = W - 82 - 24
+        a(f'<rect x="82" y="{y + 52}" width="{bw}" height="6" rx="3" fill="{t["bar"]}"/>')
+        if total:
+            a(f'<rect class="bar" {st} x="82" y="{y + 52}" width="{bw * min(1, e["progress"] / total):.1f}" '
+              f'height="6" rx="3" fill="{t["title"]}"/>')
+        a('</g>')
+    a("</svg>")
+    return "\n".join(s)
+
+
+def anime_section(mock):
+    name = CFG.get("anilist_user")
+    if not name:
+        return ""
+    entries = mock_anime() if mock else fetch_anime(name)
+    if not entries:
+        return ""
+    for theme in THEMES:
+        (ROOT / f"anime_{theme}.svg").write_text(render_anime(entries, theme), encoding="utf-8")
+    return ("### 📺 Currently watching\n\n"
+            f'<a href="https://anilist.co/user/{name}/"><picture>'
+            '<source media="(prefers-color-scheme: dark)" srcset="anime_dark.svg">'
+            f'<img alt="Anime {html.escape(name)} is watching on AniList" src="anime_light.svg">'
+            "</picture></a>")
+
+
+# ---------------------------------------------------------------- discord status
+def discord_section():
+    uid = str(CFG.get("discord_id") or "")
+    if not uid.isdigit():
+        return ""
+    base = (f"https://lanyard.cnrad.dev/api/{uid}?borderRadius=10px&hideTimestamp=false"
+            "&idleMessage=Probably%20building%20a%20Discord%20bot...")
+    return ("### 🎧 Right now on Discord\n\n"
+            f'<a href="https://discord.com/users/{uid}"><picture>'
+            f'<source media="(prefers-color-scheme: dark)" srcset="{base}&theme=dark&bg=0d1117">'
+            f'<img alt="Discord status" src="{base}&theme=light&bg=ffffff">'
+            "</picture></a>")
+
+
 # ---------------------------------------------------------------- main
 def main():
-    user = fetch_mock() if "--mock" in sys.argv else fetch_live()
+    mock = "--mock" in sys.argv
+    user = fetch_mock() if mock else fetch_live()
     for name in THEMES:
         (ROOT / f"{name}_mode.svg").write_text(render(user, name), encoding="utf-8")
         print(f"wrote {name}_mode.svg")
@@ -689,7 +864,13 @@ def main():
     readme = ROOT / "README.md"
     text = readme.read_text(encoding="utf-8")
     text = fill_section(text, "projects", write_project_cards(user))
+    text = fill_section(text, "commits", commits_markdown(user))
     text = fill_section(text, "activity", activity_markdown(user))
+    text = fill_section(text, "discord", discord_section())
+    try:
+        text = fill_section(text, "anime", anime_section(mock))
+    except Exception as e:                 # AniList being down shouldn't block the card
+        print(f"anime section left as is: {e}")
     readme.write_text(text, encoding="utf-8")
     print("updated README.md")
 
