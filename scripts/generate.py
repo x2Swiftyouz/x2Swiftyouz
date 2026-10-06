@@ -112,7 +112,8 @@ def fetch_mock():
         {"name": "Bot-Ai-Discord", "description": "AI chat bot for Discord", "isFork": False,
          "url": "https://github.com/x2Swiftyouz/Bot-Ai-Discord", "stargazerCount": 2,
          "forkCount": 1, "pushedAt": ago(hours=5), "primaryLanguage": py,
-         "languages": {"edges": [{"size": 48000, "node": py}]}},
+         "languages": {"edges": [{"size": 48000, "node": py},
+                                 {"size": 90, "node": {"name": "Dockerfile", "color": "#384d54"}}]}},
         {"name": "Bot-Music", "description": "Music bot for Discord with queue, loop and "
          "playlist support, built on discord.py", "isFork": False,
          "url": "https://github.com/x2Swiftyouz/Bot-Music", "stargazerCount": 1,
@@ -128,10 +129,12 @@ def fetch_mock():
          "languages": {"edges": [{"size": 12000, "node": py}]}},
     ]
     events = [
+        {"type": "PullRequestEvent", "repo": {"name": "x2Swiftyouz/x2Swiftyouz"},
+         "payload": {"action": "opened", "number": 3}, "created_at": ago(hours=1)},
         {"type": "PushEvent", "repo": {"name": "x2Swiftyouz/Bot-Ai-Discord"},
-         "payload": {"size": 2}, "created_at": ago(hours=5)},
+         "payload": {"ref": "refs/heads/main"}, "created_at": ago(hours=5)},
         {"type": "PushEvent", "repo": {"name": "x2Swiftyouz/Bot-Ai-Discord"},
-         "payload": {"size": 1}, "created_at": ago(hours=6)},
+         "payload": {"ref": "refs/heads/main"}, "created_at": ago(hours=6)},
         {"type": "PullRequestEvent", "repo": {"name": "x2Swiftyouz/Bot-Music"},
          "payload": {"action": "closed", "number": 4,
                      "pull_request": {"merged": True, "title": "Add loop command"}},
@@ -224,8 +227,11 @@ def top_languages(user, limit=5):
     if not total:
         return []
     ranked = sorted(totals.items(), key=lambda kv: -kv[1])
-    langs = [(n, s / total * 100, colors[n]) for n, s in ranked[:limit]]
-    rest = sum(s for _, s in ranked[limit:])
+    shown = [(n, s) for n, s in ranked[:limit] if s / total >= 0.01]   # <1% goes to Other
+    rest = total - sum(s for _, s in shown)
+    if rest / total < 0.01:                # too small to show; scale the rest to 100%
+        total, rest = total - rest, 0
+    langs = [(n, s / total * 100, colors[n]) for n, s in shown]
     if rest:
         langs.append(("Other", rest / total * 100, "#8b949e"))
     return langs
@@ -582,6 +588,12 @@ def write_project_cards(user):
 
 
 # ---------------------------------------------------------------- activity feed
+def push_text(n, branch, link):
+    what = f"{n} commit{'s' * (n != 1)} " if n else ""
+    where = f"`{branch}` in " if branch else ""
+    return f"Pushed {what}to {where}{link}"
+
+
 def describe(ev):
     repo = ev["repo"]["name"]
     link = f"[{repo}](https://github.com/{repo})"
@@ -589,8 +601,8 @@ def describe(ev):
     kind = ev["type"]
     if kind == "PushEvent":
         n = p.get("size") or len(p.get("commits") or [])
-        what = f"{n} commit{'s' * (n != 1)}" if n else "code"
-        return "⬆️", f"Pushed {what} to {link}", ("push", repo), n
+        branch = (p.get("ref") or "").removeprefix("refs/heads/")
+        return "⬆️", push_text(n, branch, link), ("push", repo, branch), n
     if kind == "CreateEvent":
         ref = p.get("ref_type")
         if ref == "repository":
@@ -633,7 +645,10 @@ def describe(ev):
 
 def activity_markdown(user, limit=6):
     items = []
+    profile_repo = f"{CFG['username']}/{CFG['username']}".lower()
     for ev in user.get("events") or []:
+        if ev["repo"]["name"].lower() == profile_repo:
+            continue                       # README/card upkeep isn't interesting activity
         d = describe(ev)
         if not d:
             continue
@@ -642,9 +657,8 @@ def activity_markdown(user, limit=6):
         if group and prev and prev["group"] == group:
             # merge consecutive pushes to the same repo into one line
             prev["count"] += count
-            n = prev["count"]
-            what = f"{n} commit{'s' * (n != 1)}" if n else "code"
-            prev["text"] = f"Pushed {what} to [{group[1]}](https://github.com/{group[1]})"
+            link = f"[{group[1]}](https://github.com/{group[1]})"
+            prev["text"] = push_text(prev["count"], group[2], link)
             continue
         items.append({"icon": icon, "text": text, "group": group, "count": count,
                       "when": rel_time(ev["created_at"])})
