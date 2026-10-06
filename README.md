@@ -118,7 +118,7 @@ You are ❌ — click a number to play your move. The bot answers as ⭕.
 <!--START_SECTION:guestbook-->
 [**✍️ Sign the guestbook**](https://github.com/x2Swiftyouz/x2Swiftyouz/issues/new?template=guestbook.yml) — leave a message and it shows up here.
 
-_Be the first to sign!_
+- **[x2Swiftyouz](https://github.com/x2Swiftyouz)**: Test entry\: checking the guestbook bot works 🚀 · <sub>2026-10-06</sub>
 <!--END_SECTION:guestbook-->
 
 <img width="100%" alt="" src="https://capsule-render.vercel.app/api?type=waving&color=0:d2a8ff,50:79c0ff,100:7ee787&height=100&section=footer" />
