@@ -72,15 +72,17 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#9](https://github.com/x2Swiftyouz/Akati-Os/pull/9) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
+_No public activity yet._
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->
 <!--START_SECTION:devlog-->
+
 <!--END_SECTION:devlog-->
 
 <!-- Codewars rank, shown when codewars_user is set in profile.json -->
 <!--START_SECTION:codewars-->
+
 <!--END_SECTION:codewars-->
 
 <!-- AniList card, shown when anilist_user is set in profile.json -->
