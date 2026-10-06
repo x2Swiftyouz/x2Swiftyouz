@@ -81,7 +81,7 @@ def clean_message(body):
     # zero-width spaces stop GitHub from auto-linking http:// and www.
     text = text.replace("\\:/", "\\:\u200b/")
     text = re.sub(r"(?i)\b(www)\\\.", "\\1\u200b\\.", text)
-    return text.replace("@", "@​")                              # no mentions
+    return text.replace("@", "@\u200b")                              # no mentions
 
 
 def render_guestbook():
