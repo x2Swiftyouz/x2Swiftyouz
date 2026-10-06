@@ -40,6 +40,7 @@ Developer().say_hi()
 
 <!-- Discord status, shown when discord_id is set in profile.json -->
 <!--START_SECTION:discord-->
+
 <!--END_SECTION:discord-->
 
 ### 🚀 Projects
@@ -57,22 +58,24 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
+- 📝 [`bb9e8a1`](https://github.com/x2Swiftyouz/Akati-Os/commit/bb9e8a1044dd0675d31c171832b297f5f68c32ec) **Akati-Os** — Docs for v1.3.1 (apps and settings in Akati OS Center); remove AkatiU… · <sub>6h ago</sub>
+- 📝 [`b4f1e28`](https://github.com/x2Swiftyouz/Akati-Os/commit/b4f1e28230c89683bec453f07338ac04892dc8e5) **Akati-Os** — Akati OS Center: System settings page; setup installs no apps; no Atl… · <sub>7h ago</sub>
+- 📝 [`627072b`](https://github.com/x2Swiftyouz/Akati-Os/commit/627072b508d74c1e03af47c3903e6c3053db1b1d) **Akati-Os** — v1.3.1: install Discord again, with its normal (not silent) installer · <sub>7h ago</sub>
+- 📝 [`b11bcd5`](https://github.com/x2Swiftyouz/Akati-Os/commit/b11bcd54d56392cb1d239524b353cdb09d8ea808) **Akati-Os** — tools/discord-probe.ps1: collect Discord state and AtlasOS settings f… · <sub>14h ago</sub>
+- 📝 [`83c9ddf`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/83c9ddf71fb0f5148c77aad7cbccaec10fd48e6a) **Bot-Ai-Discord** — Re-answer in place when a user edits their question · <sub>1d ago</sub>
+- 📝 [`9c91495`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/9c9149593a0ce2695ee789ede8cdb6a1ae802727) **Bot-Ai-Discord** — Auto-replace retired AI models instead of requiring .env edits · <sub>1d ago</sub>
 <!--END_SECTION:commits-->
 
 ### 📡 Recent activity
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- ⬆️ Pushed to `claude/akati-os-playbook-ua7w3f` in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>5h ago</sub>
-- ⬆️ Pushed to `main` in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
 - 🔀 Opened PR [#9](https://github.com/x2Swiftyouz/Akati-Os/pull/9) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
-- ⬆️ Pushed to `claude/akati-os-playbook-ua7w3f` in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
-- ⬆️ Pushed to `main` in [x2Swiftyouz/Bot-Ai-Discord](https://github.com/x2Swiftyouz/Bot-Ai-Discord) · <sub>1d ago</sub>
-- ⬆️ Pushed to `claude/busy-darwin-qaqwg8` in [x2Swiftyouz/Bot-Ai-Discord](https://github.com/x2Swiftyouz/Bot-Ai-Discord) · <sub>1d ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- AniList card, shown when anilist_user is set in profile.json -->
 <!--START_SECTION:anime-->
+
 <!--END_SECTION:anime-->
 
 ### 🐍 Contributions
