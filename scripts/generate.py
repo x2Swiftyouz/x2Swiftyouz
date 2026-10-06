@@ -790,12 +790,12 @@ def render_anime(entries, theme_name):
     a = s.append
     a(f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
       f'width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{MONO}" font-size="{fs}">')
-    a(f"""<style>
-.in{{opacity:0;animation:in .5s ease-out forwards}}
-.bar{{transform:scaleX(0);transform-box:fill-box;animation:grow .8s ease-out forwards}}
-@keyframes in{{from{{opacity:0;transform:translateX(-6px)}}to{{opacity:1;transform:none}}}}
-@keyframes grow{{to{{transform:scaleX(1)}}}}
-@media (prefers-reduced-motion:reduce){{.in,.bar{{animation:none;opacity:1;transform:none}}}}
+    a("""<style>
+.in{opacity:0;animation:in .5s ease-out forwards}
+.bar{transform:scaleX(0);transform-box:fill-box;animation:grow .8s ease-out forwards}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+@keyframes grow{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.in,.bar{animation:none;opacity:1;transform:none}}
 </style>""")
     a(f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="8" fill="{t["bg"]}" stroke="{t["border"]}"/>')
     a(f'<text x="18" y="30" font-size="15" font-weight="700" fill="{t["title"]}">📺 Currently watching</text>')
@@ -853,6 +853,42 @@ def discord_section():
             "</picture></a>")
 
 
+# ---------------------------------------------------------------- dev log / codewars
+DEVLOG_NAME = re.compile(r"(\d{4}-\d{2}-\d{2})-.+\.md")
+
+
+def devlog_posts():
+    """Posts are devlog/YYYY-MM-DD-slug.md with a '# Title' first line, newest first."""
+    posts = []
+    for f in sorted((ROOT / "devlog").glob("*.md"), reverse=True):
+        m = DEVLOG_NAME.fullmatch(f.name)
+        if not m:
+            continue                       # _template.md and anything misnamed
+        lines = f.read_text(encoding="utf-8").splitlines()
+        title = next((ln.lstrip("# ").strip() for ln in lines if ln.startswith("# ")), f.stem)
+        posts.append({"date": m.group(1), "title": title, "file": f.name})
+    return posts
+
+
+def devlog_section(limit=3):
+    posts = devlog_posts()[:limit]
+    if not posts:
+        return ""
+    base = f"https://github.com/{CFG['username']}/{CFG['username']}/blob/main/devlog"
+    rows = [f"- **[{md_text(p['title'], 80)}]({base}/{p['file']})** · <sub>{p['date']}</sub>"
+            for p in posts]
+    return "### ✍️ Dev log\n\n" + "\n".join(rows)
+
+
+def codewars_section():
+    name = CFG.get("codewars_user") or ""
+    if not re.fullmatch(r"[\w.-]+", name):
+        return ""
+    return ("### ⚔️ Codewars\n\n"
+            f'<a href="https://www.codewars.com/users/{name}">'
+            f'<img alt="Codewars rank" src="https://www.codewars.com/users/{name}/badges/large"></a>')
+
+
 # ---------------------------------------------------------------- main
 def main():
     mock = "--mock" in sys.argv
@@ -867,6 +903,8 @@ def main():
     text = fill_section(text, "commits", commits_markdown(user))
     text = fill_section(text, "activity", activity_markdown(user))
     text = fill_section(text, "discord", discord_section())
+    text = fill_section(text, "devlog", devlog_section())
+    text = fill_section(text, "codewars", codewars_section())
     try:
         text = fill_section(text, "anime", anime_section(mock))
     except Exception as e:                 # AniList being down shouldn't block the card

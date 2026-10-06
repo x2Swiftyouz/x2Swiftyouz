@@ -4,6 +4,8 @@
   <img alt="Profile views" src="https://komarev.com/ghpvc/?username=x2Swiftyouz&label=Profile%20views&color=2ea043&style=flat" />
   <img alt="Followers" src="https://img.shields.io/github/followers/x2Swiftyouz?label=Followers&style=flat&color=1f6feb&labelColor=30363d" />
   <img alt="Stars" src="https://img.shields.io/github/stars/x2Swiftyouz?label=Stars&style=flat&color=8957e5&labelColor=30363d" />
+  <a href="https://github.com/x2Swiftyouz/x2Swiftyouz/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/x2Swiftyouz/x2Swiftyouz/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://x2swiftyouz.github.io/x2Swiftyouz/"><img alt="Portfolio" src="https://img.shields.io/badge/🌐-Portfolio-2ea043?style=flat&labelColor=30363d" /></a>
 </p>
 
 <a href="https://github.com/x2Swiftyouz">
@@ -72,6 +74,14 @@ Developer().say_hi()
 <!--START_SECTION:activity-->
 - 🔀 Opened PR [#9](https://github.com/x2Swiftyouz/Akati-Os/pull/9) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
 <!--END_SECTION:activity-->
+
+<!-- Newest posts from devlog/, shown once there is one -->
+<!--START_SECTION:devlog-->
+<!--END_SECTION:devlog-->
+
+<!-- Codewars rank, shown when codewars_user is set in profile.json -->
+<!--START_SECTION:codewars-->
+<!--END_SECTION:codewars-->
 
 <!-- AniList card, shown when anilist_user is set in profile.json -->
 <!--START_SECTION:anime-->
