@@ -36,3 +36,7 @@ jobs:
           git commit -m "chore: update guestbook / xo"
           for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
           exit 1
+      # only answer once the move / entry is safely on main
+      - run: python scripts/issue_bot.py --send-reply
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
