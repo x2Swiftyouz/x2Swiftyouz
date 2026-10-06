@@ -129,6 +129,8 @@ def fetch_mock():
          "languages": {"edges": [{"size": 12000, "node": py}]}},
     ]
     events = [
+        {"type": "WatchEvent", "repo": {"name": "abozanona/pacman-contribution-graph"},
+         "payload": {"action": "started"}, "created_at": ago(days=20)},
         {"type": "PullRequestEvent", "repo": {"name": "x2Swiftyouz/x2Swiftyouz"},
          "payload": {"action": "opened", "number": 3}, "created_at": ago(hours=1)},
         {"type": "PushEvent", "repo": {"name": "x2Swiftyouz/Bot-Ai-Discord"},
@@ -646,7 +648,9 @@ def describe(ev):
 def activity_markdown(user, limit=6):
     items = []
     profile_repo = f"{CFG['username']}/{CFG['username']}".lower()
-    for ev in user.get("events") or []:
+    # the events API is not strictly newest-first, so sort before grouping
+    events = sorted(user.get("events") or [], key=lambda e: e["created_at"], reverse=True)
+    for ev in events:
         if ev["repo"]["name"].lower() == profile_repo:
             continue                       # README/card upkeep isn't interesting activity
         d = describe(ev)
