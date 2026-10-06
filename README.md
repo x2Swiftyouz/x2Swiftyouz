@@ -61,21 +61,6 @@ Developer().say_hi()
 - ⬆️ Pushed to `claude/busy-darwin-qaqwg8` in [x2Swiftyouz/Bot-Ai-Discord](https://github.com/x2Swiftyouz/Bot-Ai-Discord) · <sub>1d ago</sub>
 <!--END_SECTION:activity-->
 
-<details>
-<summary><b>⏱️ Coding time this week</b></summary>
-
-<!--START_SECTION:waka-->
-
-```txt
-From: 28 September 2026 - To: 05 October 2026
-
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
-
-</details>
-
 ### 🐍 Contributions
 
 <picture>
