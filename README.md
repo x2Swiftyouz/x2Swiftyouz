@@ -60,9 +60,9 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`54e2a7a`](https://github.com/x2Swiftyouz/Akati-Os/commit/54e2a7ae257f3c5ec4b107bd25a27c65298ea973) **Akati-Os** — CHANGELOG: update check fix · <sub>13h ago</sub>
-- 📝 [`ae90647`](https://github.com/x2Swiftyouz/Akati-Os/commit/ae9064767cdef1506f5c642e6a61b390528f12dc) **Akati-Os** — Center: fix update check (keep the properties of JSON results from ba… · <sub>13h ago</sub>
-- 📝 [`bb109e9`](https://github.com/x2Swiftyouz/Akati-Os/commit/bb109e93291e55ed38e427350585884342c72a70) **Akati-Os** — Center: update check falls back to the release page, group top apps b… · <sub>14h ago</sub>
+- 📝 [`54e2a7a`](https://github.com/x2Swiftyouz/Akati-Os/commit/54e2a7ae257f3c5ec4b107bd25a27c65298ea973) **Akati-Os** — CHANGELOG: update check fix · <sub>21h ago</sub>
+- 📝 [`ae90647`](https://github.com/x2Swiftyouz/Akati-Os/commit/ae9064767cdef1506f5c642e6a61b390528f12dc) **Akati-Os** — Center: fix update check (keep the properties of JSON results from ba… · <sub>21h ago</sub>
+- 📝 [`bb109e9`](https://github.com/x2Swiftyouz/Akati-Os/commit/bb109e93291e55ed38e427350585884342c72a70) **Akati-Os** — Center: update check falls back to the release page, group top apps b… · <sub>22h ago</sub>
 - 📝 [`83c9ddf`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/83c9ddf71fb0f5148c77aad7cbccaec10fd48e6a) **Bot-Ai-Discord** — Re-answer in place when a user edits their question · <sub>3d ago</sub>
 - 📝 [`9c91495`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/9c9149593a0ce2695ee789ede8cdb6a1ae802727) **Bot-Ai-Discord** — Auto-replace retired AI models instead of requiring .env edits · <sub>3d ago</sub>
 - 📝 [`5541d04`](https://github.com/x2Swiftyouz/Bot-Music/commit/5541d04cf9ab4fce62b9935aeda90954d70309c7) **Bot-Music** — Talk clips keep the channel as artist and the segment as a show chip,… · <sub>3d ago</sub>
@@ -72,8 +72,8 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#13](https://github.com/x2Swiftyouz/Akati-Os/pull/13) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>13h ago</sub>
-- 🔀 Opened PR [#12](https://github.com/x2Swiftyouz/Akati-Os/pull/12) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>14h ago</sub>
+- 🔀 Opened PR [#13](https://github.com/x2Swiftyouz/Akati-Os/pull/13) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>21h ago</sub>
+- 🔀 Opened PR [#12](https://github.com/x2Swiftyouz/Akati-Os/pull/12) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>22h ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->
