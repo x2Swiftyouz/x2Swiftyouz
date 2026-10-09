@@ -60,24 +60,24 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`035d29a`](https://github.com/x2Swiftyouz/Akati-Os/commit/035d29a1f3de63f4ff5f14b17250ddb31976640f) **Akati-Os** — Version 1.6.0 · <sub>4h ago</sub>
-- 📝 [`2d63ddc`](https://github.com/x2Swiftyouz/Akati-Os/commit/2d63ddc398845c23c97c9b65d861b1114e79e39e) **Akati-Os** — Remove ProductCode from playbook.conf (AME Wizard flagged the playboo… · <sub>4h ago</sub>
-- 📝 [`1cd2949`](https://github.com/x2Swiftyouz/Akati-Os/commit/1cd2949bf6e20dafb80a86d284eeeec3f9885b89) **Akati-Os** — Center: always open the Dashboard (remove the last-page memory) · <sub>7h ago</sub>
+- 📝 [`9eacb3a`](https://github.com/x2Swiftyouz/Akati-Os/commit/9eacb3ad9c0d398f9c5e0602e347ba177c2d0061) **Akati-Os** — v1.7.0: version bump and What's new · <sub>5h ago</sub>
+- 📝 [`4d8cb6f`](https://github.com/x2Swiftyouz/Akati-Os/commit/4d8cb6f27bc49847dacd0052044ce6c5e34ccf38) **Akati-Os** — Website and README: screenshots with the filled usage lines and the n… · <sub>6h ago</sub>
+- 📝 [`5a25c45`](https://github.com/x2Swiftyouz/Akati-Os/commit/5a25c45e3a6f85fefc73907dd56ed5792af8d225) **Akati-Os** — Website: link preview, download count, changelog page, animated previ… · <sub>6h ago</sub>
+- 📝 [`a95ac57`](https://github.com/x2Swiftyouz/Akati-Os/commit/a95ac57b93167116492cf44e22ed114d349af42d) **Akati-Os** — Doctor refresh rate and RAM speed checks, Game boost service pause, E… · <sub>6h ago</sub>
 - 📝 [`83c9ddf`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/83c9ddf71fb0f5148c77aad7cbccaec10fd48e6a) **Bot-Ai-Discord** — Re-answer in place when a user edits their question · <sub>5d ago</sub>
 - 📝 [`9c91495`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/9c9149593a0ce2695ee789ede8cdb6a1ae802727) **Bot-Ai-Discord** — Auto-replace retired AI models instead of requiring .env edits · <sub>5d ago</sub>
-- 📝 [`5541d04`](https://github.com/x2Swiftyouz/Bot-Music/commit/5541d04cf9ab4fce62b9935aeda90954d70309c7) **Bot-Music** — Talk clips keep the channel as artist and the segment as a show chip,… · <sub>5d ago</sub>
 <!--END_SECTION:commits-->
 
 ### 📡 Recent activity
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#21](https://github.com/x2Swiftyouz/Akati-Os/pull/21) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>4h ago</sub>
-- 🔀 Opened PR [#20](https://github.com/x2Swiftyouz/Akati-Os/pull/20) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>8h ago</sub>
-- 🔀 Opened PR [#19](https://github.com/x2Swiftyouz/Akati-Os/pull/19) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>9h ago</sub>
-- 🔀 Opened PR [#18](https://github.com/x2Swiftyouz/Akati-Os/pull/18) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>9h ago</sub>
-- 🔀 Opened PR [#17](https://github.com/x2Swiftyouz/Akati-Os/pull/17) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>10h ago</sub>
-- 🔀 Opened PR [#16](https://github.com/x2Swiftyouz/Akati-Os/pull/16) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>20h ago</sub>
+- 🔀 Opened PR [#25](https://github.com/x2Swiftyouz/Akati-Os/pull/25) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
+- 🔀 Opened PR [#24](https://github.com/x2Swiftyouz/Akati-Os/pull/24) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
+- 🔀 Opened PR [#23](https://github.com/x2Swiftyouz/Akati-Os/pull/23) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>6h ago</sub>
+- 🔀 Opened PR [#22](https://github.com/x2Swiftyouz/Akati-Os/pull/22) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>7h ago</sub>
+- 🔀 Opened PR [#21](https://github.com/x2Swiftyouz/Akati-Os/pull/21) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>12h ago</sub>
+- 🔀 Opened PR [#20](https://github.com/x2Swiftyouz/Akati-Os/pull/20) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>16h ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->
