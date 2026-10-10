@@ -60,9 +60,9 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`51acf65`](https://github.com/x2Swiftyouz/Akati-Os/commit/51acf65f170c866c19ed30ccedc19cc4cfc47e1e) **Akati-Os** — v1.8.0: version bump · <sub>11h ago</sub>
-- 📝 [`34d5103`](https://github.com/x2Swiftyouz/Akati-Os/commit/34d510359915d7092182f6472d9d29166d644b15) **Akati-Os** — CI screenshots: the dashboard below the fold and the text size card · <sub>11h ago</sub>
-- 📝 [`59480f7`](https://github.com/x2Swiftyouz/Akati-Os/commit/59480f738165489c025f2787ff4e2ef111879f75) **Akati-Os** — Website: install guide, FAQ, comparison table and a dark/light switch · <sub>11h ago</sub>
+- 📝 [`236472b`](https://github.com/x2Swiftyouz/Akati-Os/commit/236472b3fb44230ee0e576884cbd3a137be0e265) **Akati-Os** — v1.10.1 · <sub>46m ago</sub>
+- 📝 [`71a7b80`](https://github.com/x2Swiftyouz/Akati-Os/commit/71a7b80f157cd42a117d399787f66931164f2a2e) **Akati-Os** — Setup: 7-Zip instead of NanaZip · <sub>1h ago</sub>
+- 📝 [`873d20a`](https://github.com/x2Swiftyouz/Akati-Os/commit/873d20aa81d8dfe93bbbd3d78d550b961968bcaf) **Akati-Os** — v1.10.0: version bump · <sub>2h ago</sub>
 - 📝 [`83c9ddf`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/83c9ddf71fb0f5148c77aad7cbccaec10fd48e6a) **Bot-Ai-Discord** — Re-answer in place when a user edits their question · <sub>6d ago</sub>
 - 📝 [`9c91495`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/9c9149593a0ce2695ee789ede8cdb6a1ae802727) **Bot-Ai-Discord** — Auto-replace retired AI models instead of requiring .env edits · <sub>6d ago</sub>
 - 📝 [`5541d04`](https://github.com/x2Swiftyouz/Bot-Music/commit/5541d04cf9ab4fce62b9935aeda90954d70309c7) **Bot-Music** — Talk clips keep the channel as artist and the segment as a show chip,… · <sub>6d ago</sub>
@@ -72,12 +72,12 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#32](https://github.com/x2Swiftyouz/Akati-Os/pull/32) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>11h ago</sub>
-- 🔀 Opened PR [#31](https://github.com/x2Swiftyouz/Akati-Os/pull/31) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>11h ago</sub>
-- 🔀 Opened PR [#30](https://github.com/x2Swiftyouz/Akati-Os/pull/30) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>12h ago</sub>
-- 🔀 Opened PR [#29](https://github.com/x2Swiftyouz/Akati-Os/pull/29) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>12h ago</sub>
-- 🔀 Opened PR [#28](https://github.com/x2Swiftyouz/Akati-Os/pull/28) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>13h ago</sub>
-- 🔀 Opened PR [#27](https://github.com/x2Swiftyouz/Akati-Os/pull/27) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>21h ago</sub>
+- 🔀 Opened PR [#35](https://github.com/x2Swiftyouz/Akati-Os/pull/35) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>1h ago</sub>
+- 🔀 Opened PR [#34](https://github.com/x2Swiftyouz/Akati-Os/pull/34) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>3h ago</sub>
+- 🔀 Opened PR [#33](https://github.com/x2Swiftyouz/Akati-Os/pull/33) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>3h ago</sub>
+- 🔀 Opened PR [#32](https://github.com/x2Swiftyouz/Akati-Os/pull/32) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>20h ago</sub>
+- 🔀 Opened PR [#31](https://github.com/x2Swiftyouz/Akati-Os/pull/31) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>20h ago</sub>
+- 🔀 Opened PR [#30](https://github.com/x2Swiftyouz/Akati-Os/pull/30) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>21h ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->
