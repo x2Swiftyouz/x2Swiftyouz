@@ -50,6 +50,7 @@ Developer().say_hi()
 <!-- Filled automatically by scripts/generate.py: the most recently updated repos -->
 <!--START_SECTION:projects-->
 <p align="center">
+<a href="https://github.com/x2Swiftyouz/Reshade-auto-installation"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Reshade-auto-installation_dark.svg"><img alt="Reshade-auto-installation" src="cards/Reshade-auto-installation_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Akati-Os"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Akati-Os_dark.svg"><img alt="Akati-Os" src="cards/Akati-Os_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Bot-Ai-Discord"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Ai-Discord_dark.svg"><img alt="Bot-Ai-Discord" src="cards/Bot-Ai-Discord_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Bot-Music"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Music_dark.svg"><img alt="Bot-Music" src="cards/Bot-Music_light.svg" width="49%"></picture></a>
@@ -60,23 +61,22 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`7382837`](https://github.com/x2Swiftyouz/Akati-Os/commit/7382837edad25ff19ffe31a153d06e15fc677940) **Akati-Os** — v1.12.0 · <sub>10h ago</sub>
-- 📝 [`94e0833`](https://github.com/x2Swiftyouz/Akati-Os/commit/94e0833808b9dc794e2a0e84e3eab8afeada3bfa) **Akati-Os** — Akati OS Center: no plural wording in the Doctor count and the Window… · <sub>10h ago</sub>
-- 📝 [`26c3333`](https://github.com/x2Swiftyouz/Akati-Os/commit/26c33337293b69c27ffdcf44ba0920c58d857da3) **Akati-Os** — Akati OS Center: game Tweaks profiles, privacy status, Windows Update… · <sub>11h ago</sub>
-- 📝 [`83c9ddf`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/83c9ddf71fb0f5148c77aad7cbccaec10fd48e6a) **Bot-Ai-Discord** — Re-answer in place when a user edits their question · <sub>7d ago</sub>
-- 📝 [`9c91495`](https://github.com/x2Swiftyouz/Bot-Ai-Discord/commit/9c9149593a0ce2695ee789ede8cdb6a1ae802727) **Bot-Ai-Discord** — Auto-replace retired AI models instead of requiring .env edits · <sub>7d ago</sub>
-- 📝 [`5541d04`](https://github.com/x2Swiftyouz/Bot-Music/commit/5541d04cf9ab4fce62b9935aeda90954d70309c7) **Bot-Music** — Talk clips keep the channel as artist and the segment as a show chip,… · <sub>7d ago</sub>
+- 📝 [`cea92e3`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/cea92e393f26eaf4db5c21d3dd4664f912b473c4) **Reshade-auto-installation** — Remove the Effects and Presets pages from the window · <sub>3h ago</sub>
+- 📝 [`140b4fa`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/140b4fad4ab05c0acea31ee3067bff57efb113e0) **Reshade-auto-installation** — Remove shortcut, screenshot folder, backups and weekly update check · <sub>3h ago</sub>
+- 📝 [`08a8c99`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/08a8c996a606c5933bc2cd88ff9e164dc2fc465f) **Reshade-auto-installation** — Fix boxes instead of symbols in the log and lists · <sub>3h ago</sub>
+- 📝 [`c036181`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/c036181c1808d1166ba4f4e22c03c7bfbb2570e3) **Reshade-auto-installation** — Show build id in launcher and bump version to 3.0.6 · <sub>3h ago</sub>
+- 📝 [`9b0eb82`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/9b0eb82558620fe8058b38ca6464dbd8b1128fe1) **Reshade-auto-installation** — Fix page switching: hashtable key "keys" hid the .Keys property · <sub>3h ago</sub>
+- 📝 [`7382837`](https://github.com/x2Swiftyouz/Akati-Os/commit/7382837edad25ff19ffe31a153d06e15fc677940) **Akati-Os** — v1.12.0 · <sub>18h ago</sub>
 <!--END_SECTION:commits-->
 
 ### 📡 Recent activity
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#42](https://github.com/x2Swiftyouz/Akati-Os/pull/42) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>10h ago</sub>
-- 🔀 Opened PR [#41](https://github.com/x2Swiftyouz/Akati-Os/pull/41) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>10h ago</sub>
-- 🔀 Opened PR [#40](https://github.com/x2Swiftyouz/Akati-Os/pull/40) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>16h ago</sub>
-- 🔀 Opened PR [#39](https://github.com/x2Swiftyouz/Akati-Os/pull/39) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>16h ago</sub>
-- 🔀 Opened PR [#38](https://github.com/x2Swiftyouz/Akati-Os/pull/38) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>19h ago</sub>
+- 🔀 Opened PR [#42](https://github.com/x2Swiftyouz/Akati-Os/pull/42) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>18h ago</sub>
+- 🔀 Opened PR [#41](https://github.com/x2Swiftyouz/Akati-Os/pull/41) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>18h ago</sub>
+- 🔀 Opened PR [#40](https://github.com/x2Swiftyouz/Akati-Os/pull/40) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>23h ago</sub>
+- 🔀 Opened PR [#39](https://github.com/x2Swiftyouz/Akati-Os/pull/39) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>23h ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="130" viewBox="0 0 420 130" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12">
 <style>
-.in{opacity:0;animation:in .5s ease-out 0.30s forwards}
+.in{opacity:0;animation:in .5s ease-out 0.45s forwards}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.in{animation:none;opacity:1}}
 </style>
@@ -14,5 +14,5 @@
 <circle cx="25" cy="106" r="5" fill="#3572A5"/>
 <text x="35" y="110" fill="#c9d1d9">Python</text>
 <text x="94" y="110" fill="#6e7681">★ 0   ⑂ 0</text>
-<text x="404" y="110" fill="#6e7681" text-anchor="end">updated 7d ago</text>
+<text x="404" y="110" fill="#6e7681" text-anchor="end">updated 8d ago</text>
 </g></svg>
