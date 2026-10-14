@@ -61,11 +61,11 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`cea92e3`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/cea92e393f26eaf4db5c21d3dd4664f912b473c4) **Reshade-auto-installation** — Remove the Effects and Presets pages from the window · <sub>1d ago</sub>
-- 📝 [`140b4fa`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/140b4fad4ab05c0acea31ee3067bff57efb113e0) **Reshade-auto-installation** — Remove shortcut, screenshot folder, backups and weekly update check · <sub>1d ago</sub>
-- 📝 [`08a8c99`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/08a8c996a606c5933bc2cd88ff9e164dc2fc465f) **Reshade-auto-installation** — Fix boxes instead of symbols in the log and lists · <sub>1d ago</sub>
-- 📝 [`c036181`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/c036181c1808d1166ba4f4e22c03c7bfbb2570e3) **Reshade-auto-installation** — Show build id in launcher and bump version to 3.0.6 · <sub>1d ago</sub>
-- 📝 [`9b0eb82`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/9b0eb82558620fe8058b38ca6464dbd8b1128fe1) **Reshade-auto-installation** — Fix page switching: hashtable key "keys" hid the .Keys property · <sub>1d ago</sub>
+- 📝 [`cea92e3`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/cea92e393f26eaf4db5c21d3dd4664f912b473c4) **Reshade-auto-installation** — Remove the Effects and Presets pages from the window · <sub>2d ago</sub>
+- 📝 [`140b4fa`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/140b4fad4ab05c0acea31ee3067bff57efb113e0) **Reshade-auto-installation** — Remove shortcut, screenshot folder, backups and weekly update check · <sub>2d ago</sub>
+- 📝 [`08a8c99`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/08a8c996a606c5933bc2cd88ff9e164dc2fc465f) **Reshade-auto-installation** — Fix boxes instead of symbols in the log and lists · <sub>2d ago</sub>
+- 📝 [`c036181`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/c036181c1808d1166ba4f4e22c03c7bfbb2570e3) **Reshade-auto-installation** — Show build id in launcher and bump version to 3.0.6 · <sub>2d ago</sub>
+- 📝 [`9b0eb82`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/9b0eb82558620fe8058b38ca6464dbd8b1128fe1) **Reshade-auto-installation** — Fix page switching: hashtable key "keys" hid the .Keys property · <sub>2d ago</sub>
 - 📝 [`7382837`](https://github.com/x2Swiftyouz/Akati-Os/commit/7382837edad25ff19ffe31a153d06e15fc677940) **Akati-Os** — v1.12.0 · <sub>2d ago</sub>
 <!--END_SECTION:commits-->
 
