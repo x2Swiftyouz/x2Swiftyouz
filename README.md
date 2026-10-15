@@ -50,8 +50,8 @@ Developer().say_hi()
 <!-- Filled automatically by scripts/generate.py: the most recently updated repos -->
 <!--START_SECTION:projects-->
 <p align="center">
-<a href="https://github.com/x2Swiftyouz/Reshade-auto-installation"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Reshade-auto-installation_dark.svg"><img alt="Reshade-auto-installation" src="cards/Reshade-auto-installation_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Akati-Os"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Akati-Os_dark.svg"><img alt="Akati-Os" src="cards/Akati-Os_light.svg" width="49%"></picture></a>
+<a href="https://github.com/x2Swiftyouz/Reshade-auto-installation"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Reshade-auto-installation_dark.svg"><img alt="Reshade-auto-installation" src="cards/Reshade-auto-installation_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Bot-Ai-Discord"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Ai-Discord_dark.svg"><img alt="Bot-Ai-Discord" src="cards/Bot-Ai-Discord_light.svg" width="49%"></picture></a>
 <a href="https://github.com/x2Swiftyouz/Bot-Music"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/Bot-Music_dark.svg"><img alt="Bot-Music" src="cards/Bot-Music_light.svg" width="49%"></picture></a>
 </p>
@@ -61,18 +61,20 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
+- 📝 [`6ab02bf`](https://github.com/x2Swiftyouz/Akati-Os/commit/6ab02bf332ac39f218d385707333d6c8458e323a) **Akati-Os** — v1.14.0 · <sub>2h ago</sub>
+- 📝 [`734c5b9`](https://github.com/x2Swiftyouz/Akati-Os/commit/734c5b9bda5f67c3beb809264ead1841178d81ff) **Akati-Os** — Center: setup report, game runtimes, Akati settings export, Start here · <sub>2h ago</sub>
+- 📝 [`3a236ef`](https://github.com/x2Swiftyouz/Akati-Os/commit/3a236efc61cb254fd00eeacb7a013c62c5edb102) **Akati-Os** — Work in progress · <sub>3h ago</sub>
+- 📝 [`54e2f4a`](https://github.com/x2Swiftyouz/Akati-Os/commit/54e2f4a9da196794e632fb1476402bff7fc2a2cd) **Akati-Os** — Work in progress · <sub>3h ago</sub>
 - 📝 [`cea92e3`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/cea92e393f26eaf4db5c21d3dd4664f912b473c4) **Reshade-auto-installation** — Remove the Effects and Presets pages from the window · <sub>3d ago</sub>
 - 📝 [`140b4fa`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/140b4fad4ab05c0acea31ee3067bff57efb113e0) **Reshade-auto-installation** — Remove shortcut, screenshot folder, backups and weekly update check · <sub>3d ago</sub>
-- 📝 [`08a8c99`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/08a8c996a606c5933bc2cd88ff9e164dc2fc465f) **Reshade-auto-installation** — Fix boxes instead of symbols in the log and lists · <sub>3d ago</sub>
-- 📝 [`c036181`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/c036181c1808d1166ba4f4e22c03c7bfbb2570e3) **Reshade-auto-installation** — Show build id in launcher and bump version to 3.0.6 · <sub>3d ago</sub>
-- 📝 [`9b0eb82`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/9b0eb82558620fe8058b38ca6464dbd8b1128fe1) **Reshade-auto-installation** — Fix page switching: hashtable key "keys" hid the .Keys property · <sub>3d ago</sub>
-- 📝 [`7382837`](https://github.com/x2Swiftyouz/Akati-Os/commit/7382837edad25ff19ffe31a153d06e15fc677940) **Akati-Os** — v1.12.0 · <sub>4d ago</sub>
 <!--END_SECTION:commits-->
 
 ### 📡 Recent activity
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
+- 🔀 Opened PR [#44](https://github.com/x2Swiftyouz/Akati-Os/pull/44) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>2h ago</sub>
+- 🔀 Opened PR [#43](https://github.com/x2Swiftyouz/Akati-Os/pull/43) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>4h ago</sub>
 - 🔀 Opened PR [#42](https://github.com/x2Swiftyouz/Akati-Os/pull/42) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>4d ago</sub>
 - 🔀 Opened PR [#41](https://github.com/x2Swiftyouz/Akati-Os/pull/41) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>4d ago</sub>
 <!--END_SECTION:activity-->
