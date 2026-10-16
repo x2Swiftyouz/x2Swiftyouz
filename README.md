@@ -61,10 +61,10 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from each repo's default branch -->
 <!--START_SECTION:commits-->
-- 📝 [`6ab02bf`](https://github.com/x2Swiftyouz/Akati-Os/commit/6ab02bf332ac39f218d385707333d6c8458e323a) **Akati-Os** — v1.14.0 · <sub>13h ago</sub>
-- 📝 [`734c5b9`](https://github.com/x2Swiftyouz/Akati-Os/commit/734c5b9bda5f67c3beb809264ead1841178d81ff) **Akati-Os** — Center: setup report, game runtimes, Akati settings export, Start here · <sub>14h ago</sub>
-- 📝 [`3a236ef`](https://github.com/x2Swiftyouz/Akati-Os/commit/3a236efc61cb254fd00eeacb7a013c62c5edb102) **Akati-Os** — Work in progress · <sub>14h ago</sub>
-- 📝 [`54e2f4a`](https://github.com/x2Swiftyouz/Akati-Os/commit/54e2f4a9da196794e632fb1476402bff7fc2a2cd) **Akati-Os** — Work in progress · <sub>14h ago</sub>
+- 📝 [`6ab02bf`](https://github.com/x2Swiftyouz/Akati-Os/commit/6ab02bf332ac39f218d385707333d6c8458e323a) **Akati-Os** — v1.14.0 · <sub>21h ago</sub>
+- 📝 [`734c5b9`](https://github.com/x2Swiftyouz/Akati-Os/commit/734c5b9bda5f67c3beb809264ead1841178d81ff) **Akati-Os** — Center: setup report, game runtimes, Akati settings export, Start here · <sub>21h ago</sub>
+- 📝 [`3a236ef`](https://github.com/x2Swiftyouz/Akati-Os/commit/3a236efc61cb254fd00eeacb7a013c62c5edb102) **Akati-Os** — Work in progress · <sub>21h ago</sub>
+- 📝 [`54e2f4a`](https://github.com/x2Swiftyouz/Akati-Os/commit/54e2f4a9da196794e632fb1476402bff7fc2a2cd) **Akati-Os** — Work in progress · <sub>21h ago</sub>
 - 📝 [`cea92e3`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/cea92e393f26eaf4db5c21d3dd4664f912b473c4) **Reshade-auto-installation** — Remove the Effects and Presets pages from the window · <sub>4d ago</sub>
 - 📝 [`140b4fa`](https://github.com/x2Swiftyouz/Reshade-auto-installation/commit/140b4fad4ab05c0acea31ee3067bff57efb113e0) **Reshade-auto-installation** — Remove shortcut, screenshot folder, backups and weekly update check · <sub>4d ago</sub>
 <!--END_SECTION:commits-->
@@ -73,8 +73,8 @@ Developer().say_hi()
 
 <!-- Filled automatically by scripts/generate.py from public GitHub events -->
 <!--START_SECTION:activity-->
-- 🔀 Opened PR [#44](https://github.com/x2Swiftyouz/Akati-Os/pull/44) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>13h ago</sub>
-- 🔀 Opened PR [#43](https://github.com/x2Swiftyouz/Akati-Os/pull/43) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>15h ago</sub>
+- 🔀 Opened PR [#44](https://github.com/x2Swiftyouz/Akati-Os/pull/44) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>21h ago</sub>
+- 🔀 Opened PR [#43](https://github.com/x2Swiftyouz/Akati-Os/pull/43) in [x2Swiftyouz/Akati-Os](https://github.com/x2Swiftyouz/Akati-Os) · <sub>22h ago</sub>
 <!--END_SECTION:activity-->
 
 <!-- Newest posts from devlog/, shown once there is one -->
